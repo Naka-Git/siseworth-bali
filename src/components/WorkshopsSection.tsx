@@ -33,9 +33,9 @@ const fadeUp = {
 
 const WorkshopsSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-background" id="workshops">
+    <section className="py-16 sm:py-24 md:py-32 bg-background" id="workshops">
       <div className="container">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
           <div>
             <motion.div
               initial="hidden"
@@ -45,7 +45,7 @@ const WorkshopsSection = () => {
               <motion.span custom={0} variants={fadeUp} className="text-sm font-medium tracking-widest uppercase text-accent mb-4 block">
                 Workshops & Experiences
               </motion.span>
-              <motion.h2 custom={1} variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              <motion.h2 custom={1} variants={fadeUp} className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
                 Create with{" "}
                 <span className="italic text-primary">Purpose</span>
               </motion.h2>

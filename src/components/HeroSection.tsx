@@ -24,27 +24,27 @@ const HeroSection = () => {
             </span>
           </div>
 
-          <h1 className="font-display text-5xl md:text-7xl font-bold leading-[1.1] mb-6 text-primary-foreground">
+          <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-4 sm:mb-6 text-primary-foreground">
             Transforming Waste into{" "}
             <span className="italic text-primary">Worthy</span>{" "}
             Wonders
           </h1>
 
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-lg leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-primary-foreground/80 mb-6 sm:mb-10 max-w-lg leading-relaxed">
             We turn Bali's waste into beautiful, handcrafted eco-products while offering immersive sustainability workshops for conscious travelers.
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
             <a
               href="#products"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-full font-medium hover:opacity-90 transition-opacity text-sm sm:text-base"
             >
               Shop Eco-Products
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="#workshops"
-              className="inline-flex items-center gap-2 px-8 py-4 border border-primary-foreground/30 text-primary-foreground rounded-full font-medium hover:bg-primary-foreground/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border border-primary-foreground/30 text-primary-foreground rounded-full font-medium hover:bg-primary-foreground/10 transition-colors text-sm sm:text-base"
             >
               Join a Workshop
             </a>

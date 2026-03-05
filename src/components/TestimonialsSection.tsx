@@ -29,7 +29,7 @@ const fadeUp = {
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-background" id="testimonials">
+    <section className="py-16 sm:py-24 md:py-32 bg-background" id="testimonials">
       <div className="container">
         <motion.div
           initial="hidden"
@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
           <motion.span custom={0} variants={fadeUp} className="text-sm font-medium tracking-widest uppercase text-accent mb-4 block">
             Voices
           </motion.span>
-          <motion.h2 custom={1} variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold">
+          <motion.h2 custom={1} variants={fadeUp} className="font-display text-3xl sm:text-4xl md:text-5xl font-bold">
             What People Say
           </motion.h2>
         </motion.div>

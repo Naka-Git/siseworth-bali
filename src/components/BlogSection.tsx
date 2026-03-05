@@ -29,7 +29,7 @@ const fadeUp = {
 
 const BlogSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-card" id="blog">
+    <section className="py-16 sm:py-24 md:py-32 bg-card" id="blog">
       <div className="container">
         <motion.div
           initial="hidden"
@@ -40,7 +40,7 @@ const BlogSection = () => {
           <motion.span custom={0} variants={fadeUp} className="text-sm font-medium tracking-widest uppercase text-accent mb-4 block">
             Insights
           </motion.span>
-          <motion.h2 custom={1} variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <motion.h2 custom={1} variants={fadeUp} className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Stories & Sustainability
           </motion.h2>
         </motion.div>

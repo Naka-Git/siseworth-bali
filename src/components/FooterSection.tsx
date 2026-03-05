@@ -15,7 +15,7 @@ const FooterSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Let's Create Together
           </h2>
           <p className="text-primary-foreground/70 text-lg mb-8 max-w-md mx-auto">
@@ -23,7 +23,7 @@ const FooterSection = () => {
           </p>
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="flex gap-3 max-w-md mx-auto px-6"
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto px-6"
           >
             <input
               type="email"
@@ -48,7 +48,7 @@ const FooterSection = () => {
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="font-display text-xl font-bold">SiseWorth</div>
 
-          <div className="flex items-center gap-6 text-sm text-primary-foreground/60">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6 text-sm text-primary-foreground/60">
             <a href="https://instagram.com/siseworth.bali" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-primary-foreground transition-colors">
               <Instagram className="w-4 h-4" /> @siseworth.bali
             </a>

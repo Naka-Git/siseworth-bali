@@ -18,7 +18,7 @@ const fadeUp = {
 
 const ProductsSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-card" id="products">
+    <section className="py-16 sm:py-24 md:py-32 bg-card" id="products">
       <div className="container">
         <motion.div
           initial="hidden"
@@ -29,7 +29,7 @@ const ProductsSection = () => {
           <motion.span custom={0} variants={fadeUp} className="text-sm font-medium tracking-widest uppercase text-accent mb-4 block">
             Eco-Catalog
           </motion.span>
-          <motion.h2 custom={1} variants={fadeUp} className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <motion.h2 custom={1} variants={fadeUp} className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Worthy Products
           </motion.h2>
           <motion.p custom={2} variants={fadeUp} className="text-lg text-muted-foreground max-w-xl mx-auto">
@@ -37,7 +37,7 @@ const ProductsSection = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
