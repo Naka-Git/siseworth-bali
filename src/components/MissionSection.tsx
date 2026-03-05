@@ -19,9 +19,9 @@ const fadeUp = {
 
 const MissionSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-background" id="mission">
+    <section className="py-16 sm:py-24 md:py-32 bg-background" id="mission">
       <div className="container">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -37,7 +37,7 @@ const MissionSection = () => {
             <motion.h2
               custom={1}
               variants={fadeUp}
-              className="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight"
+              className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight"
             >
               Eco-Products ×{" "}
               <span className="italic text-primary">Sustainable Tourism</span>
