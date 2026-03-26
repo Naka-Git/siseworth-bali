@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Recycle, Users, Leaf, Globe } from "lucide-react";
 
 const stats = [
-  { icon: Recycle, value: "500kg+", label: "Plastic Repurposed" },
+  { icon: Recycle, value: "50kg+", label: "Plastic Repurposed" },
   { icon: Users, value: "20+", label: "Local Artisans Empowered" },
   { icon: Leaf, value: "1,200+", label: "Eco-Products Created" },
-  { icon: Globe, value: "30+", label: "Workshops Hosted" },
+  { icon: Globe, value: "10+", label: "Workshops Hosted" },
 ];
 
 const fadeUp = {
@@ -13,7 +13,11 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: [0, 0, 0.2, 1] as const },
+    transition: {
+      delay: i * 0.15,
+      duration: 0.6,
+      ease: [0, 0, 0.2, 1] as const,
+    },
   }),
 };
 
@@ -47,14 +51,19 @@ const MissionSection = () => {
               variants={fadeUp}
               className="text-lg text-muted-foreground leading-relaxed mb-4"
             >
-              SiseWorth was born from a simple belief: waste is just a resource in the wrong place. Based in Bali, we collect discarded materials — plastic, glass, textiles — and transform them into beautiful, functional products through the hands of local artisans.
+              SiseWorth was born from a simple belief: waste is just a resource
+              in the wrong place. Based in Bali, we collect discarded materials
+              — plastic, glass, textiles — and transform them into beautiful,
+              functional products through the hands of local artisans.
             </motion.p>
             <motion.p
               custom={3}
               variants={fadeUp}
               className="text-lg text-muted-foreground leading-relaxed"
             >
-              Beyond products, we invite travelers to experience sustainability firsthand through our immersive workshops, turning tourism into a force for environmental good.
+              Beyond products, we invite travelers to experience sustainability
+              firsthand through our immersive workshops, turning tourism into a
+              force for environmental good.
             </motion.p>
           </motion.div>
 
@@ -72,8 +81,12 @@ const MissionSection = () => {
                 className="bg-card rounded-2xl p-6 text-center border border-border"
               >
                 <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="font-display text-3xl font-bold mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="font-display text-3xl font-bold mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {stat.label}
+                </div>
               </motion.div>
             ))}
           </motion.div>
