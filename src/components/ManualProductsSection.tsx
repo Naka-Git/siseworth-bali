@@ -15,44 +15,43 @@ const products = [
     description:
       "A spacious and durable tote bag made from melted recycled plastic bottles, perfect for beach trips or daily use.",
   },
-  {
-    id: 2,
-    image: "/earrings.jpg",
-    impactBadge: "Upcycled Glass Beads",
-    category: "Glass • Accessories",
-    name: "Coral Reef Drop Earrings",
-    rating: 4.9,
-    reviews: 52,
-    source: "Recycled from Ubud restaurant glass waste",
-    price: "Rp 95.000",
-    description:
-      "Elegant drop earrings crafted from meticulously sorted and refined glass waste, inspired by Bali’s marine life.",
-  },
-  {
-    id: 3,
-    image: "/basket.jpg",
-    impactBadge: "Woven from Textile Scraps",
-    category: "Fabric • Home Decor",
-    name: "Sunrise Storage Basket",
-    rating: 4.7,
-    reviews: 19,
-    source: "Fabric offcuts from Denpasar garment factories",
-    price: "Rp 220.000",
-    description:
-      "A vibrant and functional storage basket hand-woven from fabric scraps, adding a touch of sustainable warmth to your home.",
-  },
+  // {
+  //   id: 2,
+  //   image: "/earrings.jpg",
+  //   impactBadge: "Upcycled Glass Beads",
+  //   category: "Glass • Accessories",
+  //   name: "Coral Reef Drop Earrings",
+  //   rating: 4.9,
+  //   reviews: 52,
+  //   source: "Recycled from Ubud restaurant glass waste",
+  //   price: "Rp 95.000",
+  //   description:
+  //     "Elegant drop earrings crafted from meticulously sorted and refined glass waste, inspired by Bali’s marine life.",
+  // },
+  // {
+  //   id: 3,
+  //   image: "/basket.jpg",
+  //   impactBadge: "Woven from Textile Scraps",
+  //   category: "Fabric • Home Decor",
+  //   name: "Sunrise Storage Basket",
+  //   rating: 4.7,
+  //   reviews: 19,
+  //   source: "Fabric offcuts from Denpasar garment factories",
+  //   price: "Rp 220.000",
+  //   description:
+  //     "A vibrant and functional storage basket hand-woven from fabric scraps, adding a touch of sustainable warmth to your home.",
+  // },
   {
     id: 4,
     image: "/bangle-set.jpg",
-    impactBadge: "Made from 3 Plastic Bottles",
+    impactBadge: "Made from 10 Plastic Bottles",
     category: "Plastic • Accessories",
-    name: "Pastel Wave Bangle Set",
+    name: "Balinese Keychain",
     rating: 4.6,
-    reviews: 41,
     source: "Collected from Sanur coastal cleanups",
     price: "Rp 75.000",
     description:
-      "A set of colorful bangles made from melted recycled plastic bottles, representing the gentle ocean waves.",
+      "An exquisite high-relief keychain featuring a traditional Indonesian figure. This piece beautifully blends cultural heritage with detailed artisanal craftsmanship.",
   },
 ];
 
