@@ -7,7 +7,7 @@ const products = [
     image: "/product1.jpg",
     impactBadge: "Made from 12 Plastic Bottles",
     category: "Plastic • Home Decor",
-    name: "Ocean Blue Tote Bag",
+    name: "Ganesha Incense Burner",
     rating: 4.8,
     reviews: 34,
     source: "Sourced from Jimbaran beach cleanups",
