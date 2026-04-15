@@ -4,16 +4,16 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 const products = [
   {
     id: 1,
-    image: "/tote-bag.jpg",
+    image: "/product1.jpg",
     impactBadge: "Made from 12 Plastic Bottles",
-    category: "Plastic • Bags",
+    category: "Plastic • Home Decor",
     name: "Ocean Blue Tote Bag",
     rating: 4.8,
     reviews: 34,
     source: "Sourced from Jimbaran beach cleanups",
     price: "Rp 185.000",
     description:
-      "A spacious and durable tote bag made from melted recycled plastic bottles, perfect for beach trips or daily use.",
+      "Transform your space into a sanctuary of peace and spirituality with this beautifully crafted Lord Ganesha incense burner. Perfect for meditation, yoga, or simply unwinding after a long day, this piece combines divine symbolism with a calming, aromatic experience.",
   },
   // {
   //   id: 2,
@@ -43,7 +43,7 @@ const products = [
   // },
   {
     id: 4,
-    image: "/bangle-set.jpg",
+    image: "/product2.jpg",
     impactBadge: "Made from 10 Plastic Bottles",
     category: "Plastic • Accessories",
     name: "Balinese Keychain",
