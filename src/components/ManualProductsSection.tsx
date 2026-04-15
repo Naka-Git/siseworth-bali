@@ -49,7 +49,7 @@ const products = [
     name: "Balinese Keychain",
     rating: 4.6,
     source: "Collected from Sanur coastal cleanups",
-    price: "Rp Soon",
+    price: "Soon",
     description:
       "An exquisite high-relief keychain featuring a traditional Indonesian figure. This piece beautifully blends cultural heritage with detailed artisanal craftsmanship.",
   },
