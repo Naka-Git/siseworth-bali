@@ -3,9 +3,7 @@ import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import MissionSection from "@/components/MissionSection";
-// Menggunakan ProductsSection bawaan asli (From Waste to Wonder)
 import ProductsSection from "@/components/ProductsSection";
-import WorkshopsSection from "@/components/WorkshopsSection";
 import BlogSection from "@/components/BlogSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FooterSection from "@/components/FooterSection";
@@ -31,11 +29,10 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <MissionSection />
-
-      {/* Bagian "Worthy Products & From Waste to Wonder" kembali hadir di sini */}
       <ProductsSection />
 
-      <WorkshopsSection />
+      {/* Bagian WorkshopsSection sudah dihapus dari sini */}
+
       <BlogSection />
       <TestimonialsSection />
       <FooterSection />
