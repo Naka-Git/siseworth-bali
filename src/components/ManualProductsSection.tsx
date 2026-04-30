@@ -11,7 +11,7 @@ const products = [
     rating: 4.8,
     reviews: 34,
     source: "Sourced from Jimbaran beach cleanups",
-    price: "Soon",
+    price: "Rp 15.000",
     description:
       "Transform your space into a sanctuary of peace and spirituality with this beautifully crafted Lord Ganesha incense burner. Perfect for meditation, yoga, or simply unwinding after a long day, this piece combines divine symbolism with a calming, aromatic experience.",
   },
@@ -49,7 +49,7 @@ const products = [
     name: "Balinese Keychain",
     rating: 4.6,
     source: "Collected from Sanur coastal cleanups",
-    price: "Soon",
+    price: "Rp 12.000",
     description:
       "An exquisite high-relief keychain featuring a traditional Indonesian figure. This piece beautifully blends cultural heritage with detailed artisanal craftsmanship.",
   },
