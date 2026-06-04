@@ -2,17 +2,23 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import ServicesSection from "@/components/ServicesSection";
 import MissionSection from "@/components/MissionSection";
 import ProductsSection from "@/components/ProductsSection";
-import BlogSection from "@/components/BlogSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import FooterSection from "@/components/FooterSection";
 
 const Index = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // 1. Mematikan fitur "pengingat posisi scroll" bawaan browser
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    // 2. Logika untuk mengarahkan layar
     if (location.hash) {
+      // Jika URL memiliki hash (misal: /#services), biarkan meluncur mulus ke sana
       const element = document.getElementById(location.hash.substring(1));
       if (element) {
         setTimeout(() => {
@@ -20,21 +26,20 @@ const Index = () => {
         }, 100);
       }
     } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      // Jika tidak ada hash (hanya di-reload atau buka '/'), paksa INSTAN ke paling atas
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
   }, [location]);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
+
+      <ServicesSection />
       <MissionSection />
       <ProductsSection />
 
-      {/* Bagian WorkshopsSection sudah dihapus dari sini */}
-
-      <BlogSection />
-      <TestimonialsSection />
       <FooterSection />
     </div>
   );
