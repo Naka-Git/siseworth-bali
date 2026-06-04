@@ -1,53 +1,102 @@
 import { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
+// Data produk dengan urutan terbaru (Handmade di atas, Eco-Plastic di bawah)
 const products = [
   {
     id: 1,
+    image: "/ganci-butterfly.jpeg",
+    impactBadge: "Handmade",
+    category: "Handmade • Keychains",
+    name: "Ganci Butterfly",
+    source: "Warna Ceria, Hati Bahagia",
+    price: "Rp 2.500",
+    description:
+      "Ganci berbahan bulu lembut dengan bentuk kupu-kupu yang lucu dan penuh warna. Cocok untuk menghiasi tas, kunci, atau hadiah spesial untuk orang tersayang! Ringan, praktis, dan nyaman disentuh.",
+  },
+  {
+    id: 2,
+    image: "/ganci-mutt.jpeg",
+    impactBadge: "Handmade",
+    category: "Handmade • Keychains",
+    name: "Ganci Muttt",
+    source: "Warna Ceria, Hati Bahagia",
+    price: "Rp 4.000",
+    description:
+      "Ganci berbahan bulu lembut dengan warna cerah yang bikin hari-harimu makin menyenangkan! Didesain agar ringan, praktis mudah dibawa, dan pastinya nyaman disentuh.",
+  },
+  {
+    id: 3,
+    image: "/ganci-jellyfish.jpeg",
+    impactBadge: "Handmade with Love",
+    category: "Handmade • Keychains",
+    name: "Ganci Jelly Fish",
+    source: "Manis • Lembut • Unik",
+    price: "Rp 7.000",
+    description:
+      "Hadirkan gemerlap di setiap langkahmu dengan Ganci Jelly Fish. Memiliki desain unik berbentuk ubur-ubur yang manis dan lembut. Sangat cocok dijadikan hadiah spesial.",
+  },
+  {
+    id: 4,
+    image: "/ganci-cerrystar.jpeg",
+    impactBadge: "Handmade with Love",
+    category: "Handmade • Keychains",
+    name: "Ganci Cerry Star",
+    source: "Manis • Lembut • Unik",
+    price: "Rp 8.000",
+    description:
+      "Perpaduan bentuk bintang dan ceri yang manis dalam satu gantungan kunci yang lembut. Desain uniknya siap menemani setiap langkahmu dengan gemerlap yang menawan.",
+  },
+  {
+    id: 5,
+    image: "/bloom-pot.jpeg",
+    impactBadge: "Bisa Req Warna",
+    category: "Handmade • Home Decor",
+    name: "Bloom Pot",
+    source: "Bunga indah, hati bahagia.",
+    price: "Mulai Rp 25.000",
+    description:
+      "Bunga handmade yang dibuat dengan detail dan penuh cinta. Anda bisa request bunga dan warna sesuai keinginan. Sangat cocok untuk hadiah atau sekadar menghiasi ruanganmu agar terasa segar dan elegan. Pengemasan aman dan rapi.",
+  },
+  {
+    id: 6,
+    image: "/orchid-bloom-vase.jpeg",
+    impactBadge: "Bisa Req Warna",
+    category: "Handmade • Home Decor",
+    name: "Orchid Bloom Vase",
+    source: "Cantik alami, hadirkan kehangatan.",
+    price: "Mulai Rp 35.000",
+    description:
+      "Anggrek handmade berkualitas yang dirangkai indah dalam vas. Hadirkan kehangatan di setiap sudut ruanganmu. Anda juga bisa request warna bunga sesuai keinginan. Pilihan tepat untuk kado berkesan.",
+  },
+  {
+    id: 7,
+    image: "/bloom-bag.jpeg",
+    impactBadge: "Banyak Pilihan",
+    category: "Handmade • Gifts",
+    name: "Bloom Bag",
+    source: "Keindahan dalam momen spesial.",
+    price: "Rp 5.000 - 12.000",
+    description:
+      "Hadirkan keindahan bunga dalam setiap momen spesialmu dengan Bloom Bag. Praktis, tidak mudah layu, tahan lama, dan hadir dalam berbagai pilihan warna cantik. Harga sangat terjangkau!",
+  },
+  {
+    id: 8,
     image: "/product1.jpg",
-    impactBadge: "Made from 12 Plastic Bottles",
-    category: "Plastic • Home Decor",
+    impactBadge: "12 Plastic Bottles",
+    category: "Eco-Plastic • Home Decor",
     name: "Ganesha Incense Burner",
-    rating: 4.8,
-    reviews: 34,
     source: "Sourced from Jimbaran beach cleanups",
     price: "Rp 15.000",
     description:
       "Transform your space into a sanctuary of peace and spirituality with this beautifully crafted Lord Ganesha incense burner. Perfect for meditation, yoga, or simply unwinding after a long day, this piece combines divine symbolism with a calming, aromatic experience.",
   },
-  // {
-  //   id: 2,
-  //   image: "/earrings.jpg",
-  //   impactBadge: "Upcycled Glass Beads",
-  //   category: "Glass • Accessories",
-  //   name: "Coral Reef Drop Earrings",
-  //   rating: 4.9,
-  //   reviews: 52,
-  //   source: "Recycled from Ubud restaurant glass waste",
-  //   price: "Rp 95.000",
-  //   description:
-  //     "Elegant drop earrings crafted from meticulously sorted and refined glass waste, inspired by Bali’s marine life.",
-  // },
-  // {
-  //   id: 3,
-  //   image: "/basket.jpg",
-  //   impactBadge: "Woven from Textile Scraps",
-  //   category: "Fabric • Home Decor",
-  //   name: "Sunrise Storage Basket",
-  //   rating: 4.7,
-  //   reviews: 19,
-  //   source: "Fabric offcuts from Denpasar garment factories",
-  //   price: "Rp 220.000",
-  //   description:
-  //     "A vibrant and functional storage basket hand-woven from fabric scraps, adding a touch of sustainable warmth to your home.",
-  // },
   {
-    id: 4,
+    id: 9,
     image: "/product2.jpg",
-    impactBadge: "Made from 10 Plastic Bottles",
-    category: "Plastic • Accessories",
+    impactBadge: "10 Plastic Bottles",
+    category: "Eco-Plastic • Keychains",
     name: "Balinese Keychain",
-    rating: 4.6,
     source: "Collected from Sanur coastal cleanups",
     price: "Rp 12.000",
     description:
@@ -55,25 +104,7 @@ const products = [
   },
 ];
 
-const categories = ["All", "Bags", "Accessories", "Home Decor"];
-
-const StarRating = ({ rating }: { rating: number }) => {
-  const stars = [];
-  for (let i = 1; i <= 5; i++) {
-    stars.push(
-      <svg
-        key={i}
-        className={`w-4 h-4 ${i <= Math.round(rating) ? "text-primary" : "text-muted"}`}
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-      </svg>,
-    );
-  }
-  return <div className="flex space-x-0.5">{stars}</div>;
-};
+const categories = ["All", "Keychains", "Home Decor", "Gifts", "Eco-Plastic"];
 
 export const ManualProductsSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -90,26 +121,26 @@ export const ManualProductsSection = () => {
     <section className="bg-transparent py-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <p className="text-sm font-medium tracking-widest uppercase text-accent mb-4 block">
-          Eco-Catalog
+          Our Collection
         </p>
-        {/* Menggunakan font-display untuk judul utama */}
         <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-foreground">
-          Shop the Impact
+          Handcrafted with Love
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-          Each piece is handcrafted by local Balinese artisans using upcycled
-          waste — turning environmental burden into beauty.
+          Setiap produk dibuat dengan detail dan penuh cinta untuk menghadirkan
+          keindahan di keseharian Anda — sekaligus menjaga kelestarian
+          lingkungan kita.
         </p>
       </div>
 
-      <div className="flex items-center justify-center space-x-3 mb-12 max-w-7xl mx-auto">
+      <div className="flex flex-wrap items-center justify-center gap-3 mb-12 max-w-7xl mx-auto">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`px-5 py-2.5 rounded-full text-sm font-medium transition-colors ${
+            className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
               activeCategory === category
-                ? "bg-primary text-primary-foreground"
+                ? "bg-primary text-primary-foreground shadow-md scale-105"
                 : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
             }`}
           >
@@ -118,57 +149,76 @@ export const ManualProductsSection = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
         {filteredProducts.map((product) => (
           <div
             key={product.id}
-            className="bg-card rounded-2xl shadow-sm overflow-hidden group border border-border flex flex-col"
+            className="bg-card rounded-3xl shadow-sm overflow-hidden group border border-border flex flex-col hover:shadow-md transition-shadow duration-300"
           >
-            <div className="relative aspect-square overflow-hidden">
+            <div className="relative aspect-[3/4] overflow-hidden bg-muted">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
               />
-              <span className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
+              <span className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-primary-foreground text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm">
                 {product.impactBadge}
               </span>
             </div>
+
             <div className="p-6 flex-grow flex flex-col justify-between">
               <div>
-                <p className="text-xs text-muted-foreground uppercase tracking-widest mb-1">
+                <p className="text-xs text-primary font-semibold uppercase tracking-widest mb-2">
                   {product.category}
                 </p>
-                {/* Menggunakan font-display untuk nama produk */}
-                <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                <h3 className="font-display text-2xl font-bold text-foreground mb-1">
                   {product.name}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-6 flex-grow">
+                <p className="text-sm text-muted-foreground mb-6 line-clamp-2">
                   {product.source}
                 </p>
               </div>
-              <div className="flex items-center justify-between mt-auto">
-                <span className="text-xl font-bold text-foreground">
+
+              <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/50">
+                <span className="text-lg font-bold text-foreground">
                   {product.price}
                 </span>
+
                 <Dialog>
                   <DialogTrigger asChild>
                     <button
                       onClick={() => setSelectedProduct(product)}
-                      className="inline-flex items-center space-x-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
+                      className="inline-flex items-center justify-center bg-secondary hover:bg-primary hover:text-primary-foreground text-secondary-foreground px-4 py-2 rounded-full text-sm font-medium transition-colors"
                     >
-                      <span>Details</span>
+                      Detail
                     </button>
                   </DialogTrigger>
+
                   {selectedProduct && (
-                    <DialogContent className="sm:max-w-3xl p-6 rounded-3xl bg-card">
-                      {/* Menggunakan font-display untuk judul di pop-up */}
-                      <h2 className="font-display text-2xl font-bold text-foreground mb-3">
-                        {selectedProduct.name}
-                      </h2>
-                      <p className="text-muted-foreground">
-                        {selectedProduct.description}
-                      </p>
+                    <DialogContent className="sm:max-w-2xl p-0 rounded-3xl bg-card overflow-hidden border-0">
+                      <div className="grid md:grid-cols-2">
+                        <div className="aspect-[3/4] md:aspect-auto md:h-full bg-muted">
+                          <img
+                            src={selectedProduct.image}
+                            alt={selectedProduct.name}
+                            className="w-full h-full object-cover object-top"
+                          />
+                        </div>
+                        <div className="p-8 flex flex-col justify-center">
+                          <span className="text-xs text-primary font-semibold uppercase tracking-widest mb-2 block">
+                            {selectedProduct.category}
+                          </span>
+                          <h2 className="font-display text-3xl font-bold text-foreground mb-2">
+                            {selectedProduct.name}
+                          </h2>
+                          <span className="inline-block bg-secondary text-secondary-foreground text-sm font-medium px-3 py-1 rounded-full mb-6 w-fit">
+                            {selectedProduct.price}
+                          </span>
+                          <p className="text-muted-foreground leading-relaxed">
+                            {selectedProduct.description}
+                          </p>
+                        </div>
+                      </div>
                     </DialogContent>
                   )}
                 </Dialog>

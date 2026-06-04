@@ -1,39 +1,82 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft } from "lucide-react"; // Menambahkan ArrowLeft untuk tombol mundur
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Data produk sekarang dilengkapi dengan gambar dan deskripsi untuk slider
+// Data produk diselaraskan dengan katalog terbaru (9 Produk)
 const previewProducts = [
   {
+    name: "Ganci Butterfly",
+    category: "Handmade • Keychains",
+    image: "/ganci-butterfly.jpeg",
+    desc: "Ganci berbahan bulu lembut dengan bentuk kupu-kupu yang lucu dan penuh warna. Cocok untuk menghiasi tas atau hadiah spesial!",
+  },
+  {
+    name: "Ganci Muttt",
+    category: "Handmade • Keychains",
+    image: "/ganci-mutt.jpeg",
+    desc: "Ganci berbahan bulu lembut dengan warna cerah yang bikin hari-harimu makin menyenangkan! Praktis dan nyaman disentuh.",
+  },
+  {
+    name: "Ganci Jelly Fish",
+    category: "Handmade • Keychains",
+    image: "/ganci-jellyfish.jpeg",
+    desc: "Hadirkan gemerlap di setiap langkahmu dengan desain unik berbentuk ubur-ubur yang manis dan lembut.",
+  },
+  {
+    name: "Ganci Cerry Star",
+    category: "Handmade • Keychains",
+    image: "/ganci-cerrystar.jpeg",
+    desc: "Perpaduan bentuk bintang dan ceri yang manis dalam satu gantungan kunci yang lembut dengan gemerlap menawan.",
+  },
+  {
+    name: "Bloom Pot",
+    category: "Handmade • Home Decor",
+    image: "/bloom-pot.jpeg",
+    desc: "Bunga handmade yang dibuat dengan detail dan penuh cinta. Cocok untuk menghiasi ruanganmu agar terasa segar dan elegan.",
+  },
+  {
+    name: "Orchid Bloom Vase",
+    category: "Handmade • Home Decor",
+    image: "/orchid-bloom-vase.jpeg",
+    desc: "Anggrek handmade berkualitas yang dirangkai indah dalam vas. Hadirkan kehangatan di setiap sudut ruanganmu.",
+  },
+  {
+    name: "Bloom Bag",
+    category: "Handmade • Gifts",
+    image: "/bloom-bag.jpeg",
+    desc: "Hadirkan keindahan bunga dalam setiap momen spesialmu. Praktis, tidak mudah layu, tahan lama, dan cantik.",
+  },
+  {
     name: "Ganesha Incense Burner",
-    category: "Plastic • Home Decor",
+    category: "Eco-Plastic • Home Decor",
     image: "/product1.jpg",
     desc: "Transform your space into a sanctuary of peace with this beautifully crafted Lord Ganesha incense burner.",
   },
   {
     name: "Balinese Keychain",
-    category: "Plastic • Accessories",
+    category: "Eco-Plastic • Keychains",
     image: "/product2.jpg",
     desc: "An exquisite high-relief keychain beautifully blending cultural heritage with detailed artisanal craftsmanship.",
   },
 ];
 
+// Proses diubah sedikit agar mencakup pembuatan kerajinan handmade & daur ulang
 const processSteps = [
   {
     step: "01",
-    title: "Collection",
-    desc: "Sourcing waste materials from local communities across Bali.",
+    title: "Ideation",
+    desc: "Designing beautiful products with purpose, combining creativity and environmental mindfulness.",
   },
   {
     step: "02",
-    title: "Sorting",
-    desc: "Carefully categorizing plastics, glass, and textiles by type.",
+    title: "Crafting",
+    desc: "Our talented local artisans meticulously handcraft each piece with attention to detail and love.",
   },
   {
     step: "03",
-    title: "Crafting",
-    desc: "Local artisans transform sorted waste into beautiful products.",
+    title: "Impact",
+    desc: "Delivering aesthetic goods that bring joy to your space while supporting sustainable practices.",
   },
 ];
 
@@ -51,15 +94,12 @@ const fadeUp = {
 };
 
 const ProductsSection = () => {
-  // State untuk melacak produk mana yang sedang ditampilkan (dimulai dari 0)
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Fungsi untuk geser ke kanan (Next)
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % previewProducts.length);
   };
 
-  // Fungsi untuk geser ke kiri (Prev)
   const prevSlide = () => {
     setCurrentIndex(
       (prev) => (prev - 1 + previewProducts.length) % previewProducts.length,
@@ -80,7 +120,7 @@ const ProductsSection = () => {
             variants={fadeUp}
             className="text-sm font-medium tracking-widest uppercase text-accent mb-4 block"
           >
-            Eco-Catalog
+            Our Collection
           </motion.span>
           <motion.h2
             custom={1}
@@ -94,25 +134,25 @@ const ProductsSection = () => {
             variants={fadeUp}
             className="text-lg text-muted-foreground max-w-xl mx-auto"
           >
-            Swipe through our latest handcrafted treasures, made with care by
-            Balinese artisans.
+            Swipe through our latest handcrafted treasures, made with care to
+            bring beauty to your everyday life.
           </motion.p>
         </motion.div>
 
-        {/* --- AREA SLIDER MULAI DI SINI --- */}
+        {/* AREA SLIDER */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-16 md:mb-24 bg-background p-6 md:p-8 rounded-3xl border border-border shadow-sm">
-          {/* Sisi Kiri: Gambar Slider */}
-          <div className="relative rounded-2xl overflow-hidden aspect-square bg-muted">
+          {/* Sisi Kiri: Gambar Slider (Rasio disesuaikan jadi 3:4 agar proporsional dengan gambar baru) */}
+          <div className="relative rounded-2xl overflow-hidden aspect-[3/4] md:aspect-square bg-muted">
             <AnimatePresence mode="wait">
               <motion.img
-                key={currentIndex} // Key ini penting agar framer-motion tahu kapan harus menganimasi
+                key={currentIndex}
                 src={previewProducts[currentIndex].image}
                 alt={previewProducts[currentIndex].name}
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="w-full h-full object-cover absolute inset-0"
+                className="w-full h-full object-cover object-top absolute inset-0"
               />
             </AnimatePresence>
           </div>
@@ -120,8 +160,6 @@ const ProductsSection = () => {
           {/* Sisi Kanan: Informasi & Kontrol Slider */}
           <div className="space-y-6 flex flex-col justify-center h-full">
             <div className="min-h-[160px]">
-              {" "}
-              {/* Tinggi minimal agar tombol tidak naik-turun saat teks berubah */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
@@ -177,9 +215,8 @@ const ProductsSection = () => {
             </div>
           </div>
         </div>
-        {/* --- AREA SLIDER SELESAI --- */}
 
-        {/* Process - "From Waste to Wonder" */}
+        {/* Process - "From Concept to Creation" */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -190,7 +227,7 @@ const ProductsSection = () => {
             variants={fadeUp}
             className="font-display text-2xl font-bold text-center mb-12"
           >
-            From Waste to Wonder
+            From Concept to Creation
           </motion.h3>
           <div className="grid md:grid-cols-3 gap-8">
             {processSteps.map((step, i) => (
